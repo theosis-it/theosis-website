@@ -106,11 +106,12 @@ a { color: inherit; text-decoration: none; }
   margin: 0 auto;
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 0 0 28px 28px;
-  background: linear-gradient(90deg, rgba(239, 219, 190, .98), rgba(227, 199, 158, .95));
-  box-shadow: 0 22px 60px rgba(61, 42, 23, .14);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  position: relative;
 }
 
 .hero-copy {
@@ -132,17 +133,13 @@ a { color: inherit; text-decoration: none; }
   font-weight: 950;
 }
 
-.hero-copy h1 {
-  margin: 0;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(76px, 10vw, 152px);
-  line-height: .78;
-  letter-spacing: -0.075em;
-  color: #26190d;
-  text-shadow: 0 10px 32px rgba(55, 34, 16, .08);
+.hero-logo {
+  width: min(520px, 92%);
+  height: auto;
+  display: block;
+  margin: 0 0 8px;
+  filter: drop-shadow(0 12px 28px rgba(55, 34, 16, .13));
 }
-
-.hero-copy h1 span { color: #6f421f; }
 
 .hero-line {
   max-width: 620px;
@@ -198,36 +195,27 @@ a { color: inherit; text-decoration: none; }
 .trust-row span:first-child::before { content: "◈"; }
 
 .hero-art {
+  min-height: 560px;
   width: 100%;
-  border-radius: 28px;
-  object-fit: cover;
-
-  -webkit-mask-image: linear-gradient(
-    to left,
-    transparent,
-    black 30%
-  );
-
-  mask-image: linear-gradient(
-    to left,
-    transparent,
-    black 30%
-  );
   position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(90deg, var(--bg-soft) 0%, rgba(231, 208, 173, .72) 14%, rgba(231, 208, 173, .08) 38%, rgba(231, 208, 173, 0) 62%),
+    linear-gradient(180deg, rgba(231, 208, 173, .18), rgba(48, 33, 20, .08)),
+    url("assets/triumph.jpg") center right / cover no-repeat;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.25) 12%, black 32%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.25) 12%, black 32%);
 }
 
-.hero-right::after {
+.hero-art::after {
   content: "";
   position: absolute;
   inset: 0;
-
-  background: radial-gradient(
-    circle at left center,
-    rgba(234, 216, 191, 0.35),
-    transparent 60%
-  );
-
+  background:
+    radial-gradient(circle at left center, rgba(239, 220, 190, .58), transparent 46%),
+    linear-gradient(90deg, var(--bg-soft), transparent 34%);
   pointer-events: none;
+  z-index: 1;
 }
 
 .signal-strip {
@@ -419,10 +407,17 @@ a { color: inherit; text-decoration: none; }
 }
 
 details {
-  padding: 20px 22px;
   border-radius: 18px;
-  background: rgba(255, 239, 214, .32);
+  background: rgba(255, 239, 214, .30);
   border: 1px solid rgba(61, 42, 23, .12);
+  overflow: hidden;
+  transition: background .22s ease, border-color .22s ease, box-shadow .22s ease, transform .18s ease;
+}
+
+details[open] {
+  background: rgba(255, 239, 214, .46);
+  border-color: rgba(61, 42, 23, .20);
+  box-shadow: 0 14px 28px rgba(61, 42, 23, .08);
 }
 
 summary {
@@ -430,6 +425,41 @@ summary {
   color: #3d2917;
   font-weight: 900;
   font-size: 18px;
+  list-style: none;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+summary::-webkit-details-marker { display: none; }
+
+summary::after {
+  content: "→";
+  color: #8f5725;
+  transition: transform .26s ease;
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+}
+
+.faq-list details p {
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 22px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: max-height .32s ease, opacity .24s ease, transform .24s ease, padding .24s ease;
+}
+
+.faq-list details[open] p {
+  max-height: 220px;
+  padding: 0 22px 20px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 footer {
@@ -553,7 +583,7 @@ footer {
   .brand { font-size: 24px; }
   .nav-cta { width: 100%; }
   .hero-copy { padding: 40px 24px; }
-  .hero-copy h1 { font-size: clamp(64px, 19vw, 96px); }
+  .hero-logo { width: min(430px, 96%); }
   .hero-line { font-size: 32px; }
   footer { flex-direction: column; }
 }
