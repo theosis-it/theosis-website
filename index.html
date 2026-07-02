@@ -3,65 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Theosis is an AI-powered Christian study companion for the modern web." />
   <title>Theosis — Software on Mission</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <nav>
-    <div class="brand">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Theosis home">
       <img src="assets/theosis-logo.png" alt="Theosis logo" />
       <span>Theosis</span>
-    </div>
-    <a href="privacy.html">Privacy</a>
-    <a href="updates.html">Development Log</a>
-  </nav>
+    </a>
 
-  <main class="hero">
-    <img class="nameplate" src="assets/theosis-mainplate.png" alt="Theosis" />
-    <p class="tagline">Software on Mission</p>
-    <h1>An AI faith companion for the modern web.</h1>
-    <p class="subtext">
-      Theosis brings Scripture, theological reflection, and AI-powered study tools directly into your browser.
-    </p>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#mission">Mission</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="updates.html">Updates</a>
+      <a href="#faq">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+
     <a
-  class="cta"
-  href="https://chromewebstore.google.com/detail/theosis/ddabniejjbfpociicpibpfglnallnpgo"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Add to Chrome
-</a>
+      class="nav-cta"
+      href="https://chromewebstore.google.com/detail/theosis/ddabniejjbfpociicpibpfglnallnpgo"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Install Theosis
+    </a>
+  </header>
 
-<p class="small">
-  Available now on the Chrome Web Store.
-</p>
+  <main>
+    <section class="hero-shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Software on Mission</p>
+        <h1 id="hero-title">theo<span>·</span>sis</h1>
+        <p class="hero-line">The AI-powered Christian study companion for the modern web.</p>
+        <p class="hero-subtext">
+          Theosis brings Scripture, theological reflection, and Christian study tools directly into your browser.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="cta"
+            href="https://chromewebstore.google.com/detail/theosis/ddabniejjbfpociicpibpfglnallnpgo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Install Theosis Free <span aria-hidden="true">→</span>
+          </a>
+          <a class="text-link" href="updates.html">See what changed</a>
+        </div>
+        <div class="trust-row" aria-label="Product details">
+          <span>Free to install</span>
+          <span>No credit card required</span>
+          <span>Works on any website</span>
+        </div>
+      </div>
+
+      <div class="hero-art" role="img" aria-label="Triumphant Christian artwork in warm tan and brown tones"></div>
+    </section>
+
+    <section class="signal-strip" aria-label="Theosis growth and trust signals">
+      <div>
+        <strong>16+</strong>
+        <span>Active users</span>
+      </div>
+      <div>
+        <strong>Growing</strong>
+        <span>Weekly</span>
+      </div>
+      <div>
+        <strong>Built in Texas</strong>
+        <span>For the Church</span>
+      </div>
+      <p>“Trusted by Christians exploring Scripture across traditions.”</p>
+    </section>
+
+    <section class="section-heading" id="features">
+      <p class="eyebrow">Core Tools</p>
+      <h2>Study while you browse.</h2>
+      <p>
+        Theosis is designed as a browser-native Christian study layer: ask, read, and interpret without leaving the page you are on.
+      </p>
+    </section>
+
+    <section class="feature-grid" aria-label="Theosis features">
+      <article class="feature-card">
+        <div class="feature-icon">☰</div>
+        <h3>Scribe</h3>
+        <img src="assets/scribe-web.png" alt="Screenshot of the Theosis Scribe panel" />
+        <p>Ask theological questions, compare traditions, and receive clear, faith-centered answers.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">☩</div>
+        <h3>Script</h3>
+        <img src="assets/script-web.png" alt="Screenshot of the Theosis Scripture lookup panel" />
+        <p>Read Scripture instantly with KJV chapter and verse lookup built directly into your browser.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon">Θ</div>
+        <h3>Exegete Me</h3>
+        <img src="assets/exegete-web.png" alt="Screenshot of the Theosis Exegete Me feature" />
+        <p>Highlight any text on the web and receive historical, biblical, and ecumenical Christian commentary.</p>
+      </article>
+    </section>
+
+    <section class="mission-panel" id="mission">
+      <div>
+        <p class="eyebrow">Mission</p>
+        <h2>Built for more than browsing.</h2>
+      </div>
+      <p>
+        Theosis exists to help Christians study Scripture, understand theological claims, and bring faith-centered reflection into ordinary web use. The long-term vision is to build software that serves the Church and eventually supports Gospel-centered mission work with transparent stewardship.
+      </p>
+    </section>
+
+    <section class="roadmap" id="roadmap">
+      <p class="eyebrow">Roadmap</p>
+      <h2>What comes next.</h2>
+      <div class="roadmap-grid">
+        <div>
+          <span>01</span>
+          <h3>Stronger Exegesis</h3>
+          <p>More structured commentary, cross references, and tradition-aware explanations.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <h3>Better Scripture Tools</h3>
+          <p>More translations, cleaner reading controls, and study workflows.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <h3>Saved Study</h3>
+          <p>Future notes, highlights, bookmarks, and account-based continuity.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <p class="eyebrow">FAQ</p>
+      <h2>Common questions.</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Is Theosis free?</summary>
+          <p>Yes. Theosis is currently free to install from the Chrome Web Store.</p>
+        </details>
+        <details>
+          <summary>What tradition does Theosis represent?</summary>
+          <p>Theosis aims to answer from a broadly Christian perspective while explaining differences between traditions fairly when they matter.</p>
+        </details>
+        <details>
+          <summary>Does Theosis replace pastors, priests, or spiritual direction?</summary>
+          <p>No. Theosis is a study aid, not a replacement for Scripture, prayer, church authority, pastoral care, or sacramental life.</p>
+        </details>
+      </div>
+    </section>
   </main>
-
-  <section class="features">
-    <div class="card">
-      <h2>Scribe</h2>
-      <p>Ask theological questions, compare traditions, and receive clear faith-centered answers.</p>
-    </div>
-    <div class="card">
-      <h2>Exegete Me</h2>
-      <p>Highlight text on any webpage and receive biblical and theological commentary.</p>
-    </div>
-    <div class="card">
-      <h2>Script</h2>
-      <p>Read Scripture while you browse, beginning with the King James Bible.</p>
-    </div>
-  </section>
-
-  <section class="mission">
-    <h2>Built for more than browsing.</h2>
-    <p>
-      Theosis is being built to transform ordinary web use into spiritual formation and future support for Gospel-centered mission work.
-    </p>
-  </section>
 
   <footer>
     <span>© 2026 Theosis</span>
-    <a href="privacy.html">Privacy Policy</a>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="updates.html">Updates</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
   </footer>
 </body>
 </html>
